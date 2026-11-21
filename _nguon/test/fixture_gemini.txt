@@ -1,0 +1,53 @@
+### BÀI: CB_7 | Vừa gà vừa chó | Dễ | Toán học cơ bản
+
+### ĐỀ BÀI
+
+Cho $n$ con, $m$ chân.
+
+### LỜI GIẢI: Python
+
+```python
+import sys
+
+def solve():
+    data = sys.stdin.read().split()
+    n = int(data[0]); m = int(data[1])
+    if m % 2 != 0:
+        print(-1); return
+    diff = m - 2 * n
+    if diff < 0:
+        print(-1); return
+    c = diff // 2
+    g = n - c
+    print(-1 if g < 0 or c < 0 else f"{g} {c}")
+
+if __name__ == "__main__":
+    solve()
+
+```
+
+### TEST MẪU | 0 | Bài toán cổ kinh điển.
+
+# 36 100
+
+22 14
+
+### TEST MẪU | 1 | Không có nghiệm vì tổng số chân là số lẻ.
+
+# 10 25
+
+-1
+
+### TEST | 9
+
+# 1000000000 3000000000
+
+500000000 500000000
+
+### TEST | 11
+
+# 999999999 2000000000
+
+999999998 1
+
+### HẾT
